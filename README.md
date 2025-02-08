@@ -1,0 +1,2 @@
+Hello all! I have created an incident reporting system for flood reporting. I have created a chatbot utilizing the IBM Watsonx Assistant and deployed it on the system to collect real-time data on flooding. The flood map is connected to a machine learning model 
+I deployed on IBM and the map shows the areas which have a high, moderate, and low risk of flooding displaying the probability on a tooltip. 
