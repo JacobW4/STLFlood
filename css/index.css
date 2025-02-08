@@ -1,0 +1,113 @@
+/* Common styles for all screen sizes */
+body, h1, h2, h3, h4, h5, h6, .topnav a {
+  font-family: "Raleway", sans-serif;
+}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("/images/Ucity.jpg"); /* Background image for both mobile and desktop */
+  min-height: 100%;
+}
+
+.w3-top {
+  position: relative;
+}
+
+.header-left {
+  font-family: 'Courier New', monospace;
+}
+
+.container {
+  position: relative;
+  margin: 15px;
+  width: auto;
+  height: auto;
+}
+
+/* Navbar */
+.topnav {
+  overflow: hidden;
+  background-color: white;
+  width: 60%;
+}
+
+.topnav a {
+  float: left;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1em;
+  border-bottom: 3px solid transparent;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+  border-bottom: 5px solid #6d356b;
+}
+
+.topnav a.active {
+  border-bottom: 5px solid #6d356b;
+}
+
+/* Iframe */
+.iframe {
+  width: 100%; /* Adjust this value as needed */
+  height: 100%; /* This ensures the aspect ratio is maintained */
+  padding-bottom: 56.25%; /* This sets the aspect ratio (16:9) */
+  position: relative;
+}
+
+/* Media query for screens smaller than 768px */
+@media screen and (max-width: 767px) {
+  .w3-bar .w3-button {
+    padding: 5px;
+  }
+
+  .header-right {
+    position: absolute;
+    top: 24.5px; /* Adjust for small screens */
+    right: 16px;
+    font-size: 10px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .topnav a {
+    padding: 8px 10px; /* Smaller padding for mobile */
+    margin-left: -10px; /* Adjust for mobile */
+  }
+
+  .container {
+    margin: 20px;
+  }
+}
+
+/* Media query for screens 768px and larger */
+@media screen and (min-width: 768px) {
+  .w3-bar .w3-button {
+    padding: 12px;
+  }
+
+  .header-right {
+    position: absolute;
+    top: 20px;
+    right: 16px;
+    font-size: 15px;
+    font-family: 'Courier New', monospace;
+  }
+
+  .topnav a {
+    padding: 12px 15px; /* Larger padding for desktop */
+    margin-left: -15px; /* Adjust for desktop */
+  }
+
+  .container {
+    margin: 15px;
+  }
+}

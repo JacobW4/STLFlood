@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flood Map</title>
+    <link rel="stylesheet" href="index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <div class="container">
+      <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="Flood.html">Flood Map</a>
+        <a href="Flood_Model.html">Flood Model</a>
+        <a href="Team.html">Team</a>
+      </div>
+    </div>
+    <!--<h2 class="header-left">FLOOD REPORTING</h2>-->
+     
+    </a>
+  </div>
+</div>
+
+<!--<iframe class="iframe" src="https://editor.giscloud.com/rest/1/maps/2661076/render.iframe?bound=-90.37370681762695,38.64621162414551,-90.26384353637695,38.68303298950195&toolbar=true&popups=true&layerlist=true&search=true" width="1200" height="600" frameborder="0" allowfullscreen="" style="border: 2px solid black;" ></iframe>-->
+
+
+<div id="map-container">
+  <!-- Embed the map iframe -->
+  <iframe 
+      src="https://editor.giscloud.com/rest/1/maps/2661076/render.iframe?bound=-90.37370681762695,38.64621162414551,-90.26384353637695,38.68303298950195&toolbar=true&popups=true&layerlist=true&search=true" 
+      id="map-iframe"
+      width="1200"
+      height="600"
+      frameborder="0"
+      allowfullscreen=""
+      style="border: 2px solid black;">
+  </iframe>
+</div>
+
+
+<script>
+  // Example of interacting with the iframe
+  const iframe = document.getElementById('map-iframe');
+
+  // Add an event listener to detect iframe load
+  iframe.addEventListener('load', function () {
+      console.log('Iframe map loaded');
+  });
+
+  // Example: Display a message when the iframe is clicked
+  iframe.contentWindow.document.addEventListener('click', function () {
+      alert('You clicked on the map!');
+  });
+
+  // Note: Full interactivity like accessing features requires backend support.
+  // To fetch features from the API, you still need to call the REST URL.
+  const restUrl = 'https://editor.giscloud.com/rest/1/maps/2661076/data.json'; // Replace with your REST API URL
+
+  fetch(restUrl)
+      .then(response => response.json())
+      .then(data => {
+          console.log('Fetched GeoJSON data:', data);
+
+          // You can add additional logic here for querying or displaying features
+      })
+      .catch(error => {
+          console.error('Error fetching GeoJSON data:', error);
+      });
+</script>
+
+
+
+    
+  
+    
+    
+
+</body>
+</html>
